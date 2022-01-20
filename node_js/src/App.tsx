@@ -8,7 +8,8 @@ function App() {
 
     const getUsers = () => {
         axios.get('http://localhost:4848/users')
-            .then(res => setUsers(res.data))
+            .then(res => {
+                setUsers(res.data)})
     }
 
     const onCreateUser = () => {

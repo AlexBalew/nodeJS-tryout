@@ -9,7 +9,7 @@ const server = http.createServer((request, response) => {
     response.setHeader('Access-Control-Allow-Headers', '*')
     /** add other headers as per requirement */
     if (request.method === 'OPTIONS') {
-        response.writeHead(200, headers);
+        response.writeHead(200);
         response.end();
         return;
     }
@@ -17,6 +17,7 @@ const server = http.createServer((request, response) => {
     switch (request.url) {
         case '/users':
             usersController(request, response)
+                .then()
             break
         case '/tasks':
             response.write(`tasks`)
