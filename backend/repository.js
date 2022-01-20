@@ -7,8 +7,8 @@ const fs = require('fs')
 
 const getUsers = () => {
     return new Promise((resolve, rej) => {
-        fs.readFile("users.json", function (err, buf) {
-            resolve(buf.toString())
+        fs.readFile('users.json', function (err, buf) {
+            resolve(JSON.parse(buf.toString()))
         })
     })
 }

@@ -8,7 +8,7 @@ exports.usersController = async (request, response) => {
     } else {
         //response.write(JSON.stringify(getUsers()))
         let users = await getUsers()
-            response.write(users)
-            response.end()
-        }
+        response.write(JSON.stringify(users))
+        response.end()
+    }
 }
